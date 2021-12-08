@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}update {{book.title}}{% endblock title %}
+
+{% block content %}
+<div>
+    <div class="md:grid md:grid-cols-3 md:gap-6">
+      <div class="md:col-span-1">
+        <div class="px-4 sm:px-0">
+          <h3 class="text-lg font-medium leading-6 text-gray-900">update {{book.title}}</h3>
+          <p class="mt-1 text-sm text-gray-600">
+            update Validation, fill these feilds to update {{book.title}} book {{book.title}}
+          </p>
+        </div>
+      </div>
+      <div  style="border: 2px;">
+        <form action="" method='post'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-900" type="submit" name='submit' id='submit' value='update'>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}  
